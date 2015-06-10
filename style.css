@@ -1,0 +1,805 @@
+@charset "UTF-8";
+/* Reset CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* General */
+.float-list, .mainbox .headline, .formlist, .cf {
+  *zoom: 1;
+}
+.float-list:after, .mainbox .headline:after, .formlist:after, .cf:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+
+.float-list li {
+  float: left;
+}
+
+/* Base */
+body {
+  font-family: 'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'Meiryo', 'メイリオ', 'sans-serif';
+}
+
+/* Layout */
+/*==============================
+共通
+==============================*/
+.wrap {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.mainbox {
+  border: 1px solid #d0d0d0;
+}
+.mainbox .headline {
+  width: 100%;
+  height: 40px;
+  font-size: 15px;
+  line-height: 40px;
+  color: #e1e1e1;
+  text-indent: 20px;
+  background: #1a1a1a;
+}
+.mainbox .headline .headline-title {
+  float: left;
+}
+.mainbox .headline .headline-btn {
+  float: right;
+  padding: 3px 10px 0 0;
+}
+
+.smallbox {
+  padding: 20px;
+}
+
+.l-contents {
+  width: 1000px;
+  margin: 20px auto 0;
+}
+.l-contents .mainarea {
+  float: right;
+  padding: 0 0 20px 0;
+  width: 720px;
+}
+.l-contents .l-side {
+  float: left;
+  width: 260px;
+}
+
+/*==============================
+header
+==============================*/
+.l-titlebar {
+  width: 100%;
+  height: 20px;
+  background: #000;
+  border-bottom: 1px solid #171717;
+}
+.l-titlebar h1 {
+  font-size: 10px;
+  line-height: 20px;
+  color: #c7c7c7;
+}
+
+.l-header {
+  padding: 10px 0 20px;
+  width: 100%;
+  height: 56px;
+  background: #000;
+}
+.l-header .header-logo {
+  float: left;
+}
+.l-header .header-btn {
+  float: right;
+}
+.l-header .header-btn ul li {
+  margin: 0 0 10px 0;
+}
+
+/*==============================
+navi
+==============================*/
+.l-navi {
+  background: url(assets/img/layout/navi/navi_bg.png) repeat;
+}
+.l-navi .navi-list {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+/*==============================
+sidebar
+==============================*/
+/* sidebar */
+.sidebar .side-banner-top .banner-list li {
+  margin: 0 0 20px 0;
+}
+.sidebar .side-login-box {
+  margin: 0 0 20px 0;
+}
+.sidebar .side-login-box dl {
+  @externd %extend-cf;
+  margin: 0 0 10px 0;
+}
+.sidebar .side-login-box dl dt {
+  float: left;
+  width: 40px;
+  height: 22px;
+  line-height: 24px;
+  font-size: 14px;
+}
+.sidebar .side-login-box dl dd input {
+  width: 166px;
+  font-size: 14px;
+  height: 22px;
+  padding: 0 5px;
+}
+.sidebar .side-login-box .login-btn {
+  margin: 10px 0;
+}
+.sidebar .side-login-box .side-login-caution {
+  font-size: 12px;
+  line-height: 20px;
+}
+.sidebar .side-menu {
+  margin: 0 0 20px 0;
+}
+.sidebar .side-menu .side-menu-list li {
+  line-height: 0;
+  border-bottom: 1px solid #d0d0d0;
+}
+.sidebar .side-banner-bottom .side-banner-list li {
+  margin: 0 0 20px 0;
+}
+
+/*==============================
+footer
+==============================*/
+.l-footer {
+  padding: 20px 0;
+  width: 100%;
+  background: #1a1a1a;
+}
+.l-footer .footer-logo {
+  width: 300px;
+  margin: 0 auto 25px;
+}
+.l-footer .footer-navi-list {
+  display: table;
+  margin: 0 auto 20px;
+}
+.l-footer .footer-navi-list li {
+  margin: 0 10px;
+  font-size: 11px;
+}
+.l-footer .footer-navi-list li a {
+  color: #fff;
+}
+.l-footer .copyright-top {
+  margin: 0 0 10px;
+  font-size: 10px;
+  color: #c5c5c5;
+  text-align: center;
+}
+.l-footer .copyright-bottom {
+  font-size: 9px;
+  color: #c5c5c5;
+  text-align: center;
+}
+
+/*==============================
+index
+==============================*/
+.l-slider {
+  margin: 0 0 20px 0;
+}
+
+.l-pickup {
+  margin: 0 0 20px 0;
+}
+.l-pickup .pickup-list {
+  width: 735px;
+}
+.l-pickup .pickup-list li {
+  margin: 0 15px 0 0;
+}
+
+.l-top-caption {
+  margin: 0 0 20px 0;
+  font-size: 11px;
+  line-height: 20px;
+}
+.l-top-caption .red-strong {
+  color: #ca0000;
+  font-weight: bold;
+}
+
+.l-top-search {
+  margin: 0 0 20px 0;
+  border: none;
+}
+
+/* ECCUBEにて再利用のため分離 */
+.formlist {
+  display: block;
+  margin: 0 0 10px 0;
+}
+.formlist dt {
+  float: left;
+  padding: 0 5px;
+  width: 180px;
+  border-left: 2px solid #399f4a;
+}
+.formlist dd {
+  float: left;
+}
+
+.btn {
+  margin: 20px 0 0 0;
+  width: 100%;
+  text-align: center;
+}
+.btn input {
+  width: 220px;
+  height: 30px;
+  background: url(assets/img/page/game_archive/search.png);
+  border: none;
+  text-indent: -9999px;
+}
+
+.l-schedule {
+  margin: 0 0 20px 0;
+}
+.l-schedule .schedule-table tr {
+  display: block;
+  padding: 0 0 5px 0;
+  margin: 0 0 20px 0;
+  border-bottom: 2px dotted #dadada;
+}
+.l-schedule .schedule-table tr th {
+  padding: 0 0 0 10px;
+  width: 310px;
+  font-size: 12px;
+  line-height: 20px;
+  border-left: 2px solid #c60752;
+}
+.l-schedule .schedule-table tr td {
+  font-size: 11px;
+  line-height: 18px;
+}
+
+/* l-place */
+.l-place {
+  margin: 0 0 20px 0;
+}
+.l-place .place-head {
+  margin: 0 0 20px 0;
+  border-bottom: 2px dotted #dadada;
+}
+.l-place .place-head .place-name {
+  display: inline-block;
+  padding: 3px 13px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  background: #c60752;
+}
+.l-place .place-list {
+  width: 700px;
+}
+.l-place .place-list li {
+  margin: 0 20px 20px 0;
+  padding: 10px;
+  width: 308px;
+  border: 1px solid #f3f3f3;
+  background: #f8f8f8;
+}
+.l-place .place-list li .place-top {
+  margin: 0 0 20px 0;
+}
+.l-place .place-list li .place-top .place-left {
+  float: left;
+  width: 140px;
+}
+.l-place .place-list li .place-top .place-right {
+  float: right;
+  width: 153px;
+}
+.l-place .place-list li .place-top .place-right h3 {
+  font-size: 12px;
+  color: #c60752;
+}
+.l-place .place-list li .place-top .place-right h3:before {
+  content: "■";
+}
+.l-place .place-list li .place-top .place-right p {
+  font-size: 11px;
+  line-height: 18px;
+}
+.l-place .place-list li .place-bottom {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  background: #4a4a4a;
+  color: #fff;
+  font-size: 11px;
+  line-height: 18px;
+}
+
+.l-about {
+  margin: 0 0 20px 0;
+}
+.l-about .about-list {
+  width: 700px;
+}
+.l-about .about-list li {
+  margin: 0 20px 20px 0;
+  width: 328px;
+}
+.l-about .about-list li .about-thumb {
+  float: left;
+  width: 130px;
+  height: 130px;
+  background: #dadada;
+}
+.l-about .about-list li .about-text {
+  float: right;
+  width: 188px;
+}
+.l-about .about-list li .about-text h3 {
+  padding: 0 0 5px;
+  margin: 0 0 10px;
+  font-size: 18px;
+  border-bottom: 2px dotted #dadada;
+}
+.l-about .about-list li .about-text p {
+  font-size: 11px;
+  line-height: 18px;
+}
+
+/*==============================
+下層共通
+==============================*/
+.l-breadscrumb {
+  padding: 15px 0 30px;
+}
+.l-breadscrumb .breadscrumb-list li {
+  font-size: 11px;
+}
+.l-breadscrumb .breadscrumb-list li:after {
+  padding: 0 20px;
+  content: "＞";
+}
+.l-breadscrumb .breadscrumb-list li:last-child:after {
+  padding: 0;
+  content: "";
+}
+
+.l-btn {
+  display: table;
+  margin: 20px auto;
+}
+.l-btn .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  border: 1px solid #ccc;
+  text-decoration: none;
+}
+
+/*==============================
+single-game
+==============================*/
+.page-game {
+  padding: 0 0 40px;
+}
+.page-game .l-game-type {
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  border-bottom: 2px dotted #cacaca;
+}
+.page-game .l-game-type .type-head {
+  display: inline-block;
+  padding: 5px 30px;
+  margin: 0 20px 0 0;
+  background: #c60752;
+  font-size: 12px;
+  color: #fff;
+  line-height: 20px;
+}
+.page-game .game-table {
+  margin: 20px 0 0 0;
+  width: 100%;
+  line-height: 18px;
+  border: 1px solid #bdbdbd;
+}
+.page-game .game-table tr {
+  border-bottom: 1px solid #e8e8e8;
+}
+.page-game .game-table tr:last-child {
+  border-bottom: 1px solid #bdbdbd;
+}
+.page-game .game-table tr th {
+  padding: 15px;
+  width: 120px;
+  font-size: 12px;
+  text-align: left;
+  vertical-align: top;
+  color: #fff;
+  background: #4a4a4a;
+}
+.page-game .game-table tr td {
+  padding: 15px;
+  font-size: 11px;
+}
+.page-game .game-table tr .game-remarks p {
+  margin: 0 0 20px 0;
+}
+.page-game .l-game-link {
+  margin: 10px 0 0 0;
+  font-size: 11px;
+}
+.page-game .l-game-link .game-link-list li a {
+  color: #787878;
+  text-decoration: underline;
+}
+.page-game .l-game-link .game-link-list li:before {
+  content: "＞";
+}
+.page-game .l-game-btn {
+  margin: 10px auto 0;
+  width: 480px;
+}
+.page-game .l-game-btn .game-btn-list {
+  margin: 0 auto;
+}
+.page-game .l-game-btn .game-btn-list li {
+  margin: 0 20px 0 0;
+}
+.page-game .l-game-btn .game-btn-caution {
+  margin: 10px 0 0;
+  font-size: 11px;
+  color: #0088cc;
+}
+
+/*==============================
+single-game
+==============================*/
+.page-game {
+  padding: 0 0 40px;
+}
+.page-game .l-game-type {
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  border-bottom: 2px dotted #cacaca;
+}
+.page-game .l-game-type .type-head {
+  display: inline-block;
+  padding: 5px 30px;
+  margin: 0 20px 0 0;
+  background: #c60752;
+  font-size: 12px;
+  color: #fff;
+  line-height: 20px;
+}
+.page-game .game-table {
+  margin: 20px 0 0 0;
+  width: 100%;
+  line-height: 18px;
+  border: 1px solid #bdbdbd;
+}
+.page-game .game-table tr {
+  border-bottom: 1px solid #e8e8e8;
+}
+.page-game .game-table tr:last-child {
+  border-bottom: 1px solid #bdbdbd;
+}
+.page-game .game-table tr th {
+  padding: 15px;
+  width: 120px;
+  font-size: 12px;
+  text-align: left;
+  vertical-align: top;
+  color: #fff;
+  background: #4a4a4a;
+}
+.page-game .game-table tr td {
+  padding: 15px;
+  font-size: 11px;
+}
+.page-game .game-table tr .game-remarks p {
+  margin: 0 0 20px 0;
+}
+.page-game .l-game-link {
+  margin: 10px 0 0 0;
+  font-size: 11px;
+}
+.page-game .l-game-link .game-link-list li a {
+  color: #787878;
+  text-decoration: underline;
+}
+.page-game .l-game-link .game-link-list li:before {
+  content: "＞";
+}
+.page-game .l-game-btn {
+  margin: 10px auto 0;
+  width: 480px;
+}
+.page-game .l-game-btn .game-btn-list {
+  margin: 0 auto;
+}
+.page-game .l-game-btn .game-btn-list li {
+  margin: 0 20px 0 0;
+}
+.page-game .l-game-btn .game-btn-caution {
+  margin: 10px 0 0;
+  font-size: 11px;
+  color: #0088cc;
+}
+
+/*==============================
+archive-game
+==============================*/
+.page-archive-game {
+  padding: 0 0 40px;
+}
+.page-archive-game .l-archive-navi .archive-navi-list {
+  width: 740px;
+}
+.page-archive-game .l-archive-navi .archive-navi-list li {
+  margin: 0 20px 0 0;
+}
+.page-archive-game .l-archive-recommend {
+  margin: 20px 0 0 0;
+}
+.page-archive-game .l-archive-news {
+  margin: 20px 0 0 0;
+}
+.page-archive-game .l-archive-news .archive-news-list {
+  margin: 0 0 20px 0;
+  border-bottom: 2px dotted #cacaca;
+}
+.page-archive-game .l-archive-news .archive-news-list:last-child {
+  margin: 0;
+}
+.page-archive-game .l-archive-news .archive-news-list dt {
+  padding: 0 0 0 5px;
+  margin: 0 0 10px 0;
+  font-size: 12px;
+  border-left: 2px solid #c60752;
+}
+.page-archive-game .l-archive-news .archive-news-list dt .date {
+  color: #c60752;
+  margin: 0 0 5px 0;
+}
+.page-archive-game .l-archive-news .archive-news-list dt .title {
+  font-weight: bold;
+}
+.page-archive-game .l-archive-news .archive-news-list dd {
+  padding: 0 10px 5px;
+  font-size: 11px;
+  line-height: 20px;
+}
+.page-archive-game .l-archive-search {
+  margin: 20px 0 0 0;
+  border: none;
+}
+.page-archive-game .l-archive-search table {
+  font-size: 14px;
+}
+.page-archive-game .l-archive-search table tr {
+  display: block;
+  margin: 0 0 10px 0;
+}
+.page-archive-game .l-archive-search table tr th {
+  padding: 0 5px;
+  width: 85px;
+  border-left: 2px solid #399f4a;
+}
+.page-archive-game .l-archive-search table tr td .archive-search-list li {
+  width: 50%;
+}
+.page-archive-game .l-archive-search .submit {
+  margin: 10px 0 0 0;
+  width: 100%;
+  text-align: center;
+}
+.page-archive-game .l-archive-search .submit input {
+  width: 220px;
+  height: 30px;
+  background: url(assets/img/page/game_archive/search.png);
+  border: none;
+  text-indent: -9999px;
+}
+.page-archive-game .l-archive-game {
+  margin: 20px 0 0 0;
+  border: none;
+}
+.page-archive-game .l-archive-game table {
+  font-size: 11px;
+  line-height: 14px;
+}
+.page-archive-game .l-archive-game table tr {
+  margin: 0 0 10px 0;
+}
+.page-archive-game .l-archive-game table tr th {
+  width: 80px;
+  text-align: center;
+}
+.page-archive-game .l-archive-game table tr td {
+  padding: 10px;
+}
+.page-archive-game .l-archive-game table tr td .title {
+  margin: 0 0 5px 0;
+  font-size: 12px;
+}
+.page-archive-game .l-archive-game table tr td .title:before {
+  content: "■";
+  color: #e4b32e;
+}
+.page-archive-game .l-archive-game table tr td .date {
+  color: #808080;
+}
+.page-archive-game .l-archive-game table tr td .date .date-detail {
+  margin: 0 10px 0 0;
+}
+.page-archive-game .l-archive-game table tr .place {
+  width: 40px;
+}
+.page-archive-game .l-archive-game table tr .caption {
+  width: 180px;
+}
+.page-archive-game .l-archive-game table tr .limit {
+  text-align: center;
+  color: #e4b32e;
+}
+.page-archive-game .l-archive-game table tr .limit .limit-full {
+  padding: 10px;
+  background: #e4b32e;
+  color: #fff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.page-archive-game .l-archive-game table tr .limit .limit-empty {
+  display: block;
+  font-size: 18px;
+}
+.page-archive-game .l-archive-game .game-pager {
+  margin: 20px 0 0 0;
+}
+.page-archive-game .l-archive-game .game-pager .pager-list {
+  display: table;
+  margin: 0 auto;
+}
+.page-archive-game .l-archive-game .game-pager .pager-list li {
+  padding: 5px 8px;
+  margin: 0 5px;
+  border: 1px solid #bdbdbd;
+}
+.page-archive-game .l-archive-game .game-pager .pager-list li a {
+  color: #bdbdbd;
+  text-decoration: none;
+}
+.page-archive-game .l-archive-game .game-pager .pager-list li:hover {
+  background: #bdbdbd;
+}
+.page-archive-game .l-archive-game .game-pager .pager-list li:hover a {
+  color: #fff;
+}
+.page-archive-game .l-archive-game .game-pager .pager-list .prev, .page-archive-game .l-archive-game .game-pager .pager-list .next {
+  border: none;
+}
+.page-archive-game .l-archive-game .game-pager .pager-list .current {
+  background: #000;
+  color: #fff;
+}
+
+/*==============================
+archive-recommend-list
+※EC-CUBE ブロック化のため分離
+==============================*/
+.archive-recommend-list {
+  width: 705px;
+}
+.archive-recommend-list li {
+  width: 210px;
+  margin: 0 25px 0 0;
+}
+.archive-recommend-list li .thumb {
+  width: 210px;
+  height: 110px;
+  background: #7e7e7e;
+}
+.archive-recommend-list li table {
+  margin: 10px 0 0 0;
+  font-size: 11px;
+  line-height: 18px;
+}
+.archive-recommend-list li table tr {
+  display: block;
+  padding: 0;
+  border: none;
+  margin: 0 0 10px 0;
+}
+.archive-recommend-list li table tr:last-child {
+  margin: 0;
+}
+.archive-recommend-list li table tr th {
+  float: left;
+  padding: 0 5px;
+  width: 50px;
+  border-left: 2px solid #0053a6;
+  border-right: none;
+  border-bottom: none;
+  color: #000;
+  background: none;
+}
+.archive-recommend-list li table tr td {
+  padding: 0;
+  border: 0;
+  background: none;
+}
